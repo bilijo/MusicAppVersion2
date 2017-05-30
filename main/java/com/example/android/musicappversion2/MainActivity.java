@@ -25,10 +25,10 @@ public class MainActivity extends AppCompatActivity {
             // The code in this method will be executed when the Classic Music ButtonView is clicked on.
             @Override
             public void onClick (View view){
-                Intent genreIntent = new Intent(MainActivity.this, ManageList.class);
+                Intent genreIntent = new Intent(MainActivity.this, ArtistList.class);
                 String inName = ((TextView) view.findViewById(R.id.classic_button_view)).getText().toString();
                 genreIntent.putExtra("genreMusic", inName);
-                Log.d("MyActivity", "genreIntent: " + inName);
+                Log.d("MyActivity", "sendGenreIntent: " + inName);
                 startActivity(genreIntent);
             }
         });
@@ -42,10 +42,11 @@ public class MainActivity extends AppCompatActivity {
             // The code in this method will be executed when the Classic Music ButtonView is clicked on.
             @Override
             public void onClick (View view){
-                Intent genreIntent = new Intent(MainActivity.this, ManageList.class);
+                Intent genreIntent = new Intent(MainActivity.this, ArtistList.class);
                 String inName = ((TextView) view.findViewById(R.id.jazz_button_view)).getText().toString();
                 genreIntent.putExtra("genreMusic", inName);
                 Log.d("MyActivity", "genreIntent: " + inName);
+
                 startActivity(genreIntent);
             }
         });
