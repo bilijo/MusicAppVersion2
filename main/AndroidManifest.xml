@@ -16,7 +16,19 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ManageList"></activity>
+    <activity
+        android:launchMode ="singleTop"
+        android:name=".ArtistList"
+            android:parentActivityName=".MainActivity"/>
+        <activity
+            android:launchMode ="singleTop"
+        android:name=".SongList"
+            android:parentActivityName=".ArtistList"/>
+        <activity
+            android:launchMode ="singleTop"
+            android:name=".PlaySong"
+            android:parentActivityName=".SongList"></activity>
+
     </application>
 
 </manifest>
