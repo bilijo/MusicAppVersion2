@@ -2,6 +2,7 @@ package com.example.android.musicappversion2;
 
 import android.app.Activity;
 import android.support.annotation.NonNull;
+import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,8 +18,12 @@ import java.util.List;
 
 public class ArtistListAdapter extends ArrayAdapter<Artist>{
 
-    public ArtistListAdapter(Activity context, List<Artist> item ) {
+
+    private int mColorResourceId;
+
+    public ArtistListAdapter(Activity context, List<Artist> item, int colorResourceId ) {
         super(context, 0, item);
+        mColorResourceId = colorResourceId;
     }
 
     @Override
@@ -48,6 +53,12 @@ public class ArtistListAdapter extends ArrayAdapter<Artist>{
         // Get the image resource ID from the current Artist object and
         // set the image to iconView
         iconView.setImageResource(currentArtistName.getImageResourceId());
+
+
+        // Find the color that the resource ID maps to
+        int color = ContextCompat.getColor(getContext(), mColorResourceId);
+        // Set the background color of the text container View
+        nameTextView.setBackgroundColor(color);
 
         // Return the whole list item layout (containing 2 TextViews and an ImageView)
         // so that it can be shown in the ListView

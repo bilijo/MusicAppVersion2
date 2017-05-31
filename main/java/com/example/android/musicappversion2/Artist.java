@@ -9,14 +9,12 @@ public class Artist {
     // Name of the Artist(e.g. Mozart, Berlioz, Chopin)
     private String mArtistName;
 
-    // Drawable resource ID
+    // Drawable resource ID ie pictures, icone
     private int mImageResourceId;
 
     /*
-    * Create a new Artist object.
-    *
+    * Create a new Artist object.    *
     * @param vName is the name of the Artist(e.g. Bach)
-
     * @param image is drawable reference ID that corresponds to the Artist
     * */
     public Artist(String vName,  int imageResourceId)
