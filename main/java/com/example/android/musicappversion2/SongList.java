@@ -1,6 +1,7 @@
 package com.example.android.musicappversion2;
 
 import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -10,6 +11,8 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+
+import static com.example.android.musicappversion2.R.id.textView;
 
 public class SongList extends AppCompatActivity {
 
@@ -53,10 +56,23 @@ public class SongList extends AppCompatActivity {
                 categoryColor = R.color.jazzGenre;
                 songFromArtist.add(new Song("Sing Sing Sing", R.drawable.ic_audiotrack_black_48dp));
                 songFromArtist.add(new Song("why don't you do right", R.drawable.ic_audiotrack_black_48dp));
+
+                break;
+            case "Jason Mraz":
+                categoryColor = R.color.popGenre;
+                songFromArtist.add(new Song("I Won't Give Up", R.drawable.ic_audiotrack_black_48dp));
+                songFromArtist.add(new Song("Lucky", R.drawable.ic_audiotrack_black_48dp));
+
+                break;
+            case "Alain Souchon":
+                categoryColor = R.color.popGenre;
+                songFromArtist.add(new Song("J'ai dix ans", R.drawable.ic_audiotrack_black_48dp));
+                songFromArtist.add(new Song("Jamais content", R.drawable.ic_audiotrack_black_48dp));
+
                 break;
         }
 
-
+        // param categoryColor pass the color of the category the song belongs to
         SongListAdapter songListAdapter = new SongListAdapter(this, songFromArtist, categoryColor);
 
         // Get a reference to the ListView which is in ----- activity_song_list.xml -----,
@@ -74,6 +90,12 @@ public class SongList extends AppCompatActivity {
 
                 Intent songIntent = new Intent(SongList.this, PlaySong.class);
                 songIntent.putExtra("IntentSongName", inName);
+
+                ColorDrawable genreColor = (ColorDrawable) view.findViewById(R.id.song_name).getBackground();
+
+                int colorCode = genreColor.getColor();
+
+                songIntent.putExtra("IntentBkgColor", colorCode);
 
                 // launch SongList activity once an Artist's name has been clicked
                 startActivity(songIntent);

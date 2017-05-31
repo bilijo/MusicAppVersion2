@@ -15,9 +15,13 @@ public class PlaySong extends AppCompatActivity {
         // get intent from SongList
         Intent recupIntent = getIntent();
         String vSongName = recupIntent.getStringExtra("IntentSongName");
+        String vColorGenre = recupIntent.getStringExtra("IntentBkgColor");
+
+        int intColor = Integer.parseInt(vColorGenre);
 
         // Create an instance of the View which would display the name of the Song
         TextView trackname = (TextView) findViewById(R.id.play_track);
         trackname.setText(vSongName);
+        trackname.setBackgroundColor(intColor);
     }
 }
