@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:padding="@dimen/global_padding"
     tools:context="com.example.android.musicappversion2.MainActivity">
 
     <TextView
@@ -11,25 +12,33 @@
         android:layout_height="wrap_content"
         android:textSize="16sp"
         android:gravity="center"
-        android:text="Here is the main menu of the app
-with music genre provided to be selected.
-You can add other genre if needed
-We use explicit intents to call each listed genre categories"
+        android:text="MHere is the main menu of the app with music genre provided to be selected.
+        We use explicit intents to call each listed genre categories"
         android:layout_marginBottom="24dp"/>
 
     <Button
         android:id="@+id/classic_button_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="@dimen/activity_bottom_margin"
+        android:background="@color/classicGenre"
         android:text="Classic"/>
 
     <Button
         android:id="@+id/jazz_button_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
+        android:background="@color/jazzGenre"
+        android:layout_marginBottom="@dimen/activity_bottom_margin"
         android:text="Jazz"/>
+
+    <Button
+        android:id="@+id/pop_button_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/popGenre"
+        android:layout_marginBottom="@dimen/activity_bottom_margin"
+        android:text="Pop"/>
 
 
 
